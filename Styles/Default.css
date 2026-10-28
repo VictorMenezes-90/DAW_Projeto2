@@ -221,7 +221,7 @@ abbr {
 
 /*Tabelas (Area_Card)*/
 .Stats {
-    margin-top: 10px;
+    margin: 10px 0 5px 0;
 
     border-collapse: collapse;
     border: 1px solid white;
@@ -241,7 +241,7 @@ abbr {
 }
 
 .Stats td {
-    background-color: var(--SubFundo);
+    background-color: var(--Fundo);
     border: 1px solid white;
     padding: 8px;
 
@@ -249,7 +249,7 @@ abbr {
 }
 
 .Stats tr:nth-child(even) td {
-    background-color: var(--Destaque-Hover);
+    background-color: var(--SubFundo);
 }
 
 /*Footer padrão (Comunidade + Forms)*/
