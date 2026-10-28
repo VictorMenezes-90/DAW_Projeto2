@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Righteous&display=swap');
+:root {
+    --Fundo: #120A1A;
+    --SubFundo: #1D122B;
+
+    --Destaque: rgb(200, 100, 255);
+    --Destaque-Hover: rgb(218, 140, 255);
+    --Contraste: #F5C453;
+
+    --Color-Titulo: #F5E8FF;
+    --Color-Body: #D2C4E0;
+    --Color-Bordas: #34204D;
+
+    --Font-Titulo: 'Righteous';
+    --Font-Body: 'Quicksand';
+}
+
+.Kingdom_Header {
+    background: 
+        radial-gradient(transparent 20%, var(--Color-Bordas) 90%),
+        no-repeat url('../Images/Cards_Kingdoms/Isle_Thumbnail.webp') center / cover;
+}
+
+.Design_Grid {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    
+    margin-top: 20px;
+}
+.Design_Card:not(#Ancient) {
+    --Grid-Hover: var(--Destaque-Hover);
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+
+    padding: 20px;
+    
+    background: var(--SubFundo);
+    border: 1px solid var(--Color-Bordas); border-left: 5px solid var(--Destaque);
+    border-radius: 10px;
+
+    transition: transform 0.35s, border-color 0.35s, box-shadow 0.35s, background-color 0.5s;
+}
+.Design_Card#Ancient {
+    --Grid-Hover: var(--Destaque-Hover);
+    margin-top: 20px;
+}
+
+.Tip_Card {
+    margin: 20px 0;
+    padding: 15px 20px;
+    
+    background-color: var(--Fundo);
+    border: 1px solid var(--SubFundo); border-radius: 10px;
+    
+    transition: background-color 0.5s, box-shadow 0.5s;
+}
+.Tip_Card:hover {
+    background-color: var(--Color-Bordas);
+    box-shadow: 0px 0px 5px var(--Destaque);
+}
+
+.Areas_Grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+.Area_Card {
+    --Grid-Hover: var(--Destaque-Hover);
+    min-width: 350px;
+}

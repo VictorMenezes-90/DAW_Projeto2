@@ -1,0 +1,341 @@
+/*Fontes, Cores e Layout padrão*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: var(--Fundo);
+
+    color: var(--Color-Body);
+    font-family: var(--Font-Body);
+    line-height: 1.4;
+}
+html { scroll-behavior: smooth; }
+main {
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 0 20px;
+
+    max-width: 1000px;
+    
+    text-align: justify;
+}
+h1, h2, h3, summary {
+    color: var(--Color-Titulo);
+    font-family: var(--Font-Titulo);
+}
+a {
+    color: var(--Destaque); 
+    text-decoration: underline;
+}
+a:hover {
+    color: var(--Destaque-Hover);
+    text-shadow: 0px 0px 5px var(--Destaque);
+}
+h2 {
+    margin: 20px 0;
+    padding: 10px 0;
+
+    border-bottom: 2px solid var(--Color-Bordas);
+
+    transition: transform 0.3s, border-color 0.3s;
+}
+h2:hover {
+    border-bottom-color: var(--Destaque-Hover);
+    transform: translateY(-5px);
+}
+summary {
+    margin-bottom: 5px;
+}
+b, strong, abbr {
+    color: var(--Color-Titulo);
+    font-weight: bolder;
+}
+abbr {
+    text-decoration: underline;
+}
+
+/*Menu de Navegação*/
+.Nav {
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 0 30px;    
+    
+    height: 70px;
+
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
+    background-color: var(--SubFundo);
+    border-bottom: 2px solid var(--Color-Bordas);
+}
+.Nav_Indicator {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    margin: auto 0;
+    height: 60px;
+}
+.Nav_Indicator img{
+    height: 100%;
+}
+.Nav_Link_Container {
+    display: flex;
+    gap: 30px;
+
+    margin: auto 0;
+}
+.Nav_Link {
+    color: var(--Color-Body);
+    text-decoration: none;
+    font-family: var(--Font-Titulo);
+
+    transition: color 0.3s;
+}
+.Nav_Link:hover{
+    color: var(--Destaque);
+    text-shadow: none;
+}
+.Back_Link {
+    margin-left: 10px;
+    transition: transform 0.5s
+}
+.Back_Link:hover{
+    transform: translateX(-7.5px);
+}
+
+/*Grid Padrão*/
+.Grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Auto-Fit: Força as colunas preencherem o espaço que sobrou
+       MinMax: Define o tamanho mínimo e máximo da coluna */
+    gap: 20px;
+}
+.Grid_Card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 20px;
+    
+    height: 280px;
+    
+    background: var(--Fundo);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    border: 1px solid var(--Color-Bordas);
+    border-radius: 10px;
+
+    transition: transform 0.35s, border-color 0.35s, box-shadow 0.35s, background-color 0.5s;
+}
+.Grid_Card:hover {
+    background-color: var(--SubFundo);
+    box-shadow: 0px 2.5px 2.5px var(--Grid-Hover);
+    border-color: var(--Grid-Hover);
+
+    transform: translateY(-5px);
+}
+.Grid_Card:hover h3 {
+    color: var(--Grid-Hover);
+}
+
+/*Kingdoms*/
+/*Header do Kingdom*/
+.Kingdom_Header {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 20px;
+    height: 60dvh;
+}
+.Kingdom_Title {
+    text-transform: uppercase;
+    text-shadow: 0 0 15px var(--Destaque-Hover);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+.Kingdom_Subtitle{
+    margin: 0;
+    color: var(--Color-Titulo);
+}
+.Kingdom_Description {
+    margin: 20px 0;
+    max-width: 600px;
+
+    color: var(--Fundo);
+    text-shadow: 0 0 10px var(--Destaque-Hover);
+    font-size: 1.1em;
+}
+
+/*Cartões de Area*/
+.Area_Card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 20px;
+
+    background-color: var(--SubFundo);
+    border: 1px solid var(--Color-Bordas);
+    border-radius: 10px;
+
+    transition: transform 0.35s, border-color 0.35s, box-shadow 0.35s;
+}
+.Area_Card:hover {
+    border-color: var(--Grid-Hover);
+    box-shadow: 0px 2.5px 2.5px var(--Grid-Hover);
+    transform: translateY(-5px);
+}
+.Area_Thumbnail {
+    margin-left: -20px;
+    margin-top: -20px;
+    width: calc(100% + 40px);
+
+    height: auto;
+    border-radius: 10px;
+}
+.Area_Card_Top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.Area_Card_Top audio {
+    width: 300px;
+    height: 48px;
+}
+
+/*Tabelas (Area_Card)*/
+.Stats {
+    margin-top: 10px;
+
+    border-collapse: collapse;
+    border: 1px solid white;
+    width: 100%;
+
+    color: white;
+    font-weight: 900;
+    text-align: center;
+}
+
+.Stats th {
+    background-color: var(--Destaque);
+    padding: 8px;
+
+    font-family: var(--Font-Titulo);
+    text-align: center;
+}
+
+.Stats td {
+    background-color: var(--SubFundo);
+    border: 1px solid white;
+    padding: 8px;
+
+    width: 33%;
+}
+
+.Stats tr:nth-child(even) td {
+    background-color: var(--Destaque-Hover);
+}
+
+/*Footer padrão (Comunidade + Forms)*/
+footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+
+    margin-top: 50px;
+    padding: 40px 20px;
+
+    background: no-repeat url('../Images/Footer_BG.webp') center / cover, var(--Fundo);
+    background-blend-mode: overlay;
+    border-top: 1px solid var(--Color-Bordas);
+}
+footer div {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    margin: 15px auto;
+    
+    width: 100%;
+    max-width: 450px;
+    
+    text-align: center;
+}
+footer h3 {
+    margin: 20px 0;
+    padding: 10px;
+
+    border-bottom: 2px solid var(--Color-Bordas);
+
+    transition: transform 0.3s, border-color 0.3s;
+}
+footer h3:hover {
+    border-bottom-color: var(--Destaque-Hover);
+    transform: translateY(-5px);
+}
+#Community ul {
+    width: 100%;
+    list-style: none;
+}
+#Register form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    margin: 0 auto;
+    
+    width: 100%;
+}
+#Register input {
+    padding: 10px;
+    padding-left: 20px;
+
+    background-color: transparent;
+    border: 1px solid var(--Destaque);
+    border-radius: 25px;
+
+    color: white;
+
+    overflow: none;
+}
+#Register input:hover, #Register input:active {
+    border-color: var(--Destaque);
+}
+.Register_Button {
+    padding: 10px 0;
+
+    background-color: var(--Destaque);
+    border-radius: 30px;
+    border-style: none;
+
+    color: var(--SubFundo);
+    text-decoration: none;
+    font-family: var(--Font-Titulo);
+    font-size: 0.7rem;
+    font-weight: bold;
+    
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s;
+}
+#Register button:hover {
+    background-color: var(--Destaque-Hover);
+    box-shadow: 0 0 20px var(--Destaque);
+
+    transform: scale(1.1);
+}

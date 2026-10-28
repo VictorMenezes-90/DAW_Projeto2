@@ -1,0 +1,187 @@
+/*Exportação de Fontes e definição da Paleta index.HTML*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Righteous&display=swap');
+:root {
+    --Fundo: #0B0F19;
+    --SubFundo: #161F30;
+
+    --Destaque: #F5C453;
+    --Destaque-Hover: #FFD770;
+
+    --Color-Titulo: #FFFFFF;
+    --Color-Body: #CBD5E1;
+    --Color-Bordas: #24324D;
+
+    --Font-Titulo: 'Righteous';
+    --Font-Body: 'Quicksand';
+}
+
+/*Definição ÚNICA do Header Index.HTML*/
+.Header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 20px;
+
+    width: 100%;
+    height: 100dvh;
+
+    background:
+        radial-gradient(transparent 20%, var(--Fundo) 90%),
+        no-repeat url('../Images/Header_BG.png') center / cover;
+}
+.Header h1 {
+    text-transform: uppercase;
+    text-shadow: 0 0 15px var(--Destaque-Hover);
+    font-size: 2rem;
+}
+.Header p {
+    margin: 20px 0;
+    max-width: 600px;
+
+    color: var(--Fundo);
+    text-shadow: 0 0 10px var(--Destaque-Hover);
+    font-size: 1.1em;
+}
+.Header_Button {
+    padding: 15px 30px;
+
+    background-color: var(--Destaque);
+    border-radius: calc(30px + 1.1rem);
+    
+    color: var(--Color-Titulo);
+    text-decoration: none;
+    font: bolder 1.1rem var(--Font-Titulo);
+    
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s;
+}
+.Header_Button:hover {
+    background-color: var(--Destaque-Hover);
+    box-shadow: 0 0 20px var(--Destaque);
+    color: var(--Color-Titulo);
+    transform: scale(1.1);
+}
+
+/*Definição ESPECÍFICA dos Grids Index.HTML*/
+.Elements_Card {--Grid-Hover: var(--Destaque-Hover);}
+.Kingdoms_Grid {margin-top: 20px;}
+.Kingdoms_Grid a, .Kingdoms_Grid a:hover {text-decoration: inherit; text-shadow: inherit; color: inherit;}
+.Kingdoms_Card#IsleOfDawn {--Grid-Hover: rgb(200, 100, 255)}
+.Kingdoms_Card#DaylightPrarie {--Grid-Hover: rgb(0, 200, 150)}
+.Kingdoms_Card#HiddenForest {--Grid-Hover: rgb(0, 150, 150)}
+.Kingdoms_Card#ValleyOfTriumph {--Grid-Hover: rgb(200, 100, 150)}
+.Kingdoms_Card#GoldenWasteland {--Grid-Hover: rgb(0, 150, 0)}
+.Kingdoms_Card#VaultOfKnowledge {--Grid-Hover: rgb(0, 50, 200)}
+.Kingdoms_Card#Eden {--Grid-Hover: rgb(150, 0, 0); margin-top: 20px;}
+.Eden_Card, .Eden_Card:hover {text-decoration: none; text-shadow: none; color: unset;}
+
+/*Definição ÚNICA da seção Social Index.HTML*/
+.Social_Flex {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+    background-color: var(--SubFundo);
+    border: 1px solid var(--Color-Bordas);
+    border-radius: 10px;
+
+    transition: transform 0.35s, border-color 0.35s, box-shadow 0.35s, background-color 0.5s;
+}
+.Social_Flex:hover {
+    background-color: var(--SubFundo);
+    box-shadow: 0px 2.5px 2.5px var(--Destaque);
+    border-color: var(--Destaque-Hover);
+
+    transform: translateY(-5px);
+}
+.Social_Flex img {
+    width: 100%;
+    max-height: 350px;
+    height: auto;
+
+    border-radius: 10px 10px 0 0;
+    
+    object-fit: cover;
+}
+.Social_Flex p {
+    padding: 30px;
+}
+
+/*Definição ÚNICA da seção Critics Index.HTML*/
+.Critics_Video iframe {
+    margin-bottom: 20px;
+
+    width: 100%;
+    
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    border: 1px solid var(--Color-Bordas);
+    transition: all .35s;
+}
+.Critics_Video iframe:hover {
+    background-color: var(--SubFundo);
+    box-shadow: 0px 1.5px 10px var(--Destaque);
+    border-color: var(--Destaque);
+
+    transform: translateY(-5px);
+}
+.Critics_Quote {
+    margin: 20px auto;
+
+    max-width: 750px;
+    
+    background-color: var(--SubFundo);
+    border-left: 2px solid var(--Destaque);
+    border-radius: 10px;
+
+    transition: box-shadow 0.25s;
+}
+.Critics_Quote p {
+    padding: 15px;
+
+    font-style: italic;
+}
+.Critics_Quote cite {
+    display: block;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-style: italic;
+}
+.Critics_Score {
+    padding: 5px 15px;
+
+    background: linear-gradient(to right, #00ff64 calc((var(--score) - 25) * 1%), #24324D calc((var(--score)) * 1%));
+    border-radius: 0 0 10px 10px;
+
+    color: #fff;
+    text-align: right;
+    font-weight: bold;
+}
+.Critics_Quote:hover{
+    border-left-color: var(--Destaque);
+    box-shadow: 0px 0px 10px var(--Destaque-Hover);
+}
+
+/*Definição ÚNICA da seção Download*/
+.Download_Container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 15px;
+
+    margin-top: 20px;
+}
+.Download_Link img {
+    width: 100px;
+    height: auto;
+
+    border-radius: 50%;
+
+    transition: transform 0.2s ease;
+}
+.Download_Link img:hover {
+    transform: scale(1.1);
+}
